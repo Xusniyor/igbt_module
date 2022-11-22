@@ -56,5 +56,16 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
-set_global_assignment -name VHDL_FILE dFlipFlop.vhd
+set_location_assignment PIN_21 -to signal_a_in
+set_location_assignment PIN_26 -to signal_a_out
+set_location_assignment PIN_19 -to signal_b_in
+set_location_assignment PIN_28 -to signal_b_out
+set_location_assignment PIN_34 -to led_a_out
+set_location_assignment PIN_36 -to led_b_out
+set_location_assignment PIN_62 -to clk
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to signal_a_in
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to signal_b_in
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to reset
+set_global_assignment -name VHDL_FILE sig_out_m.vhd
+set_global_assignment -name VHDL_FILE sig_in_m.vhd
 set_global_assignment -name VHDL_FILE igbt_module.vhd

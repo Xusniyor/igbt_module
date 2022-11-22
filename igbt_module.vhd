@@ -23,33 +23,25 @@ entity igbt_module is
 end entity;
 
 architecture rtl of igbt_module is
--- Kirish qisim
-signal a_and_b_in_signal  : std_logic := '0'; -- a va b signalani qo`shish
--- O`rta qisim
-signal a_and_b_out_signal : std_logic := '0'; -- a va b qo`shilgan signallar
--- Chiqish qisim
-signal dff_q_not : std_logic := '0';
+
+signal ab_sig : std_logic := '0';
 
 begin
-	-- Kirish
-	a_and_b_in_signal <= (not signal_a_in) and (not signal_b_in);
-	-- ------
-	-- Ichki
-	a_and_b_out_signal <= a_and_b_in_signal;
-	-- ------
-	-- Chiqish
-	signal_a_out <= a_and_b_out_signal and dff_q_not;
-	signal_b_out <= a_and_b_out_signal and (not dff_q_not);
-	-- ------
-	
-	chiqish_dff : entity work.dFlipFlop
-	port map (
-		D 		=> not dff_q_not,
-		Clk 	=> a_and_b_out_signal,
-		Reset => '0',
-		Q 		=> dff_q_not
-	);
 
+	in_module_inst : entity work.sig_in_m
+	port map (
+		in_a 		=> signal_a_in,
+		in_b 		=> signal_b_in,
+		out_ab 	=> ab_sig
+	);
+	
+	out_module_inst : entity work.sig_out_m
+	port map (
+		in_ab => ab_sig,
+		out_a => signal_a_out,
+		out_b => signal_b_out
+	);
+	
 	process (clk, reset)
 	begin
 		if (reset = '1') then
