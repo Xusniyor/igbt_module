@@ -1,6 +1,6 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/Xusniyor/Documents/igbt_module/sig_out_m.vhd
 source_file = 1, C:/Users/Xusniyor/Documents/igbt_module/sig_in_m.vhd
+source_file = 1, C:/Users/Xusniyor/Documents/igbt_module/sig_out_m.vhd
 source_file = 1, C:/Users/Xusniyor/Documents/igbt_module/igbt_module.vhd
 source_file = 1, c:/intelfpga_lite/21.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/intelfpga_lite/21.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd

@@ -66,6 +66,7 @@ set_location_assignment PIN_62 -to clk
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to signal_a_in
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to signal_b_in
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR OFF -to reset
-set_global_assignment -name VHDL_FILE sig_out_m.vhd
 set_global_assignment -name VHDL_FILE sig_in_m.vhd
+set_global_assignment -name VHDL_FILE sig_out_m.vhd
 set_global_assignment -name VHDL_FILE igbt_module.vhd
+set_global_assignment -name VHDL_FILE clk_count.vhd

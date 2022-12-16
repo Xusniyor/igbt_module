@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition"
 
--- DATE "11/23/2022 03:05:42"
+-- DATE "11/25/2022 22:33:47"
 
 -- 
 -- Device: Altera EPM240T100C5 Package TQFP100
@@ -38,10 +38,10 @@ ENTITY 	igbt_module IS
 	reset : IN std_logic;
 	signal_a_in : IN std_logic;
 	signal_b_in : IN std_logic;
-	signal_a_out : OUT std_logic;
-	signal_b_out : OUT std_logic;
-	led_a_out : OUT std_logic;
-	led_b_out : OUT std_logic
+	signal_a_out : BUFFER std_logic;
+	signal_b_out : BUFFER std_logic;
+	led_a_out : BUFFER std_logic;
+	led_b_out : BUFFER std_logic
 	);
 END igbt_module;
 
